@@ -1,0 +1,11 @@
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\bin\Debug\CS223Lab_GUI_1.exe.config
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\bin\Debug\CS223Lab_GUI_1.exe
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\bin\Debug\CS223Lab_GUI_1.pdb
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.csproj.AssemblyReference.cache
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.csproj.SuggestedBindingRedirects.cache
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.Form1.resources
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.Properties.Resources.resources
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.csproj.GenerateResource.cache
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.csproj.CoreCompileInputs.cache
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.exe
+C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI_1\obj\Debug\CS223Lab_GUI_1.pdb
