@@ -33,6 +33,7 @@
             this.flpInventoryItems = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnTestConn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
@@ -88,11 +89,23 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnTestConn
+            // 
+            this.btnTestConn.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestConn.Location = new System.Drawing.Point(816, 293);
+            this.btnTestConn.Name = "btnTestConn";
+            this.btnTestConn.Size = new System.Drawing.Size(146, 52);
+            this.btnTestConn.TabIndex = 40;
+            this.btnTestConn.Text = "Test Connection";
+            this.btnTestConn.UseVisualStyleBackColor = true;
+            this.btnTestConn.Click += new System.EventHandler(this.btnTestConn_Click);
+            // 
             // DisplayProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 445);
+            this.Controls.Add(this.btnTestConn);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flpInventoryItems);
@@ -113,5 +126,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpInventoryItems;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnTestConn;
     }
 }

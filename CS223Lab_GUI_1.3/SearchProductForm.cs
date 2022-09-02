@@ -35,20 +35,20 @@ namespace CS223Lab_GUI_1
             {
                 return;
             }
-            if (Product.findByName(txtSearchEntry.Text).Count() == 0)
+            if (Product.FindByName(txtSearchEntry.Text).Count() == 0)
             {
                 dgvSearchResults.DataSource = null;
                 MessageBox.Show("No Results Found.", "Search");
             }
             else
             {
-                dgvSearchResults.DataSource = Product.findByName(txtSearchEntry.Text);
+                dgvSearchResults.DataSource = Product.FindByName(txtSearchEntry.Text);
             }
         }
 
         private void btnPriceFilter1_Click(object sender, EventArgs e)
         {
-            List<Product> filterResults = Product.findAll(0, 10);
+            List<Product> filterResults = Product.FilterByPrice(0, 10);
             if (filterResults.Count() == 0)
             {
                 dgvSearchResults.DataSource = null;
@@ -62,7 +62,7 @@ namespace CS223Lab_GUI_1
 
         private void btnPriceFilter2_Click(object sender, EventArgs e)
         {
-            List<Product> filterResults = Product.findAll(10, 80);
+            List<Product> filterResults = Product.FilterByPrice(10, 80);
             if (filterResults.Count() == 0)
             {
                 dgvSearchResults.DataSource = null;
@@ -76,7 +76,7 @@ namespace CS223Lab_GUI_1
 
         private void btnPriceFilter3_Click(object sender, EventArgs e)
         {
-            List<Product> filterResults = Product.findAll(80, 150);
+            List<Product> filterResults = Product.FilterByPrice(80, 150);
             if (filterResults.Count() == 0)
             {
                 dgvSearchResults.DataSource = null;

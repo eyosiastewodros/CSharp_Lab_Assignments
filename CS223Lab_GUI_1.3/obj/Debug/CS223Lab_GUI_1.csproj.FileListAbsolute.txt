@@ -27,3 +27,19 @@ C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.Login
 C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.SearchProductForm.resources
 C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.AddProductForm2.resources
 C:\Users\eyob9\Documents\VS Projects\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.ProductCard.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\bin\Debug\CS223Lab_GUI_1.exe.config
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\bin\Debug\CS223Lab_GUI_1.exe
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\bin\Debug\CS223Lab_GUI_1.pdb
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.csproj.AssemblyReference.cache
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.AddProductForm2.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.DisplayProductsForm.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.LoginForm.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.MainForm.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.ProductCard.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.Properties.Resources.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.SearchProductForm.resources
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.csproj.GenerateResource.cache
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.csproj.CoreCompileInputs.cache
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.exe
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI_1.3\obj\Debug\CS223Lab_GUI_1.pdb

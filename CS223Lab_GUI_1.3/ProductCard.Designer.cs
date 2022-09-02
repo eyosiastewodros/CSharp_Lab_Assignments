@@ -67,8 +67,9 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
+            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(60, 105);
+            this.lblPrice.Location = new System.Drawing.Point(56, 105);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(54, 25);
             this.lblPrice.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Yellow;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblInventoryNum);
