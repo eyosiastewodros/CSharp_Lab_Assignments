@@ -61,6 +61,7 @@
             // flpInventoryItems
             // 
             this.flpInventoryItems.AutoScroll = true;
+            this.flpInventoryItems.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.flpInventoryItems.Location = new System.Drawing.Point(285, 113);
             this.flpInventoryItems.Margin = new System.Windows.Forms.Padding(7);
             this.flpInventoryItems.Name = "flpInventoryItems";

@@ -229,7 +229,7 @@
             this.groupBox2.Controls.Add(this.dtpItemDate);
             this.groupBox2.Controls.Add(this.txtCount);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(371, 83);
+            this.groupBox2.Location = new System.Drawing.Point(367, 83);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(370, 244);
             this.groupBox2.TabIndex = 31;

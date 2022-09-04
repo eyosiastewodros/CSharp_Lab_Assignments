@@ -59,3 +59,4 @@ C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS
 C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.csproj.CoreCompileInputs.cache
 C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.exe
 C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.pdb
+C:\Users\Mirus\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.DetailsForm.resources

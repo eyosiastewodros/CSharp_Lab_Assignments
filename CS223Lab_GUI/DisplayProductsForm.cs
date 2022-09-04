@@ -31,9 +31,10 @@ namespace CS223Lab_GUI_1
 
         private void prdct_Click(object sender, EventArgs e)
         {
-            // ProductCard clickedCard = (ProductCard) sender;
-            // MessageBox.Show(clickedCard.ProductName + " Got Clicked");
-            MessageBox.Show("Product Got Clicked");
+            ProductCard clickedCard = (ProductCard)sender;
+            DetailsForm prdctInfo = new DetailsForm(clickedCard.prdct, mainForm);
+            mainForm.Hide();
+            prdctInfo.Show();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -41,9 +42,9 @@ namespace CS223Lab_GUI_1
             flpInventoryItems.Controls.Clear();
             foreach (var item in Product.GetAllProducts())
             {
-                ProductCard prdctCard = new ProductCard(item.ItemName, item.InventoryNum, item.Price.ToString());
-                prdctCard.Click += new EventHandler(prdct_Click);
+                ProductCard prdctCard = new ProductCard(item);
                 flpInventoryItems.Controls.Add(prdctCard);
+                prdctCard.Click += new EventHandler(prdct_Click);
             }
         }
 

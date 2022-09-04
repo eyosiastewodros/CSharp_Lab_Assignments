@@ -37,6 +37,7 @@
             this.btnPriceFilter2 = new System.Windows.Forms.Button();
             this.btnPriceFilter3 = new System.Windows.Forms.Button();
             this.btnPriceFilter1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(598, 72);
+            this.btnSearch.Location = new System.Drawing.Point(694, 72);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(86, 33);
             this.btnSearch.TabIndex = 4;
@@ -55,18 +56,18 @@
             // txtSearchEntry
             // 
             this.txtSearchEntry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchEntry.Location = new System.Drawing.Point(272, 71);
+            this.txtSearchEntry.Location = new System.Drawing.Point(278, 71);
             this.txtSearchEntry.Name = "txtSearchEntry";
-            this.txtSearchEntry.Size = new System.Drawing.Size(320, 33);
+            this.txtSearchEntry.Size = new System.Drawing.Size(410, 33);
             this.txtSearchEntry.TabIndex = 3;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgvSearchResults);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(126, 158);
+            this.groupBox3.Location = new System.Drawing.Point(234, 138);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(738, 266);
+            this.groupBox3.Size = new System.Drawing.Size(590, 283);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search Results";
@@ -74,9 +75,9 @@
             // dgvSearchResults
             // 
             this.dgvSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResults.Location = new System.Drawing.Point(18, 37);
+            this.dgvSearchResults.Location = new System.Drawing.Point(19, 37);
             this.dgvSearchResults.Name = "dgvSearchResults";
-            this.dgvSearchResults.Size = new System.Drawing.Size(703, 207);
+            this.dgvSearchResults.Size = new System.Drawing.Size(552, 228);
             this.dgvSearchResults.TabIndex = 18;
             // 
             // btnLogOut
@@ -108,7 +109,7 @@
             this.btnPriceFilter2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriceFilter2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPriceFilter2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPriceFilter2.Location = new System.Drawing.Point(434, 118);
+            this.btnPriceFilter2.Location = new System.Drawing.Point(70, 225);
             this.btnPriceFilter2.Name = "btnPriceFilter2";
             this.btnPriceFilter2.Size = new System.Drawing.Size(122, 34);
             this.btnPriceFilter2.TabIndex = 37;
@@ -122,7 +123,7 @@
             this.btnPriceFilter3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriceFilter3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPriceFilter3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPriceFilter3.Location = new System.Drawing.Point(608, 118);
+            this.btnPriceFilter3.Location = new System.Drawing.Point(70, 275);
             this.btnPriceFilter3.Name = "btnPriceFilter3";
             this.btnPriceFilter3.Size = new System.Drawing.Size(122, 34);
             this.btnPriceFilter3.TabIndex = 38;
@@ -136,7 +137,7 @@
             this.btnPriceFilter1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriceFilter1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPriceFilter1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPriceFilter1.Location = new System.Drawing.Point(260, 118);
+            this.btnPriceFilter1.Location = new System.Drawing.Point(70, 175);
             this.btnPriceFilter1.Name = "btnPriceFilter1";
             this.btnPriceFilter1.Size = new System.Drawing.Size(122, 34);
             this.btnPriceFilter1.TabIndex = 39;
@@ -144,11 +145,22 @@
             this.btnPriceFilter1.UseVisualStyleBackColor = false;
             this.btnPriceFilter1.Click += new System.EventHandler(this.btnPriceFilter1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 24);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Filter";
+            // 
             // SearchProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 445);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPriceFilter1);
             this.Controls.Add(this.btnPriceFilter3);
             this.Controls.Add(this.btnPriceFilter2);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.Button btnPriceFilter2;
         private System.Windows.Forms.Button btnPriceFilter3;
         private System.Windows.Forms.Button btnPriceFilter1;
+        private System.Windows.Forms.Label label1;
     }
 }

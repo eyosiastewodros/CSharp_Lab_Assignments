@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CS223Lab_GUI_1
 {
-    class Product
+    public class Product
     {
         public int Number { get; set; }
         public string ItemName { get; set; }

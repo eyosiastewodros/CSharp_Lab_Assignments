@@ -17,13 +17,16 @@ namespace CS223Lab_GUI_1
             InitializeComponent();
         }
 
-        public ProductCard(string productName, string inventoryNum, string price)
+        public ProductCard(Product prdct)
         {
             InitializeComponent();
-            lblName.Text = productName;
-            lblInventoryNum.Text = inventoryNum;
-            lblPrice.Text = price;
+            this.prdct = prdct;
+            ProductName = prdct.ItemName;
+            InventoryNum = prdct.InventoryNum;
+            Price = (prdct.Price).ToString();
         }
+
+        public Product prdct { get; set; }
 
         private string _productName;
 

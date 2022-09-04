@@ -39,7 +39,7 @@ namespace CS223Lab_GUI_1
             Product prdct1 = new Product();
             prdct1.Date = dtpItemDate.Text;
 
-            // Number validation
+            #region Number validation
             if (String.IsNullOrEmpty(txtNumber.Text))
             {
                 errorProvider1.SetError(txtNumber, "Number is required.");
@@ -56,8 +56,9 @@ namespace CS223Lab_GUI_1
                 prdct1.Number = int.Parse(txtNumber.Text);
                 isValid[0] = true;
             }
+            #endregion
 
-            // Name Validation
+            #region Name Validation
             if (String.IsNullOrEmpty(txtItemName.Text))
             {
                 errorProvider2.SetError(txtItemName, "Item Name is required.");
@@ -77,8 +78,9 @@ namespace CS223Lab_GUI_1
                 prdct1.ItemName = txtItemName.Text;
                 isValid[1] = true;
             }
+            #endregion
 
-            // Inventory Number Validation
+            #region Inventory Number Validation
             if (String.IsNullOrEmpty(txtInventoryNum.Text))
             {
                 errorProvider3.SetError(txtInventoryNum, "Inventory Number is required.");
@@ -95,8 +97,9 @@ namespace CS223Lab_GUI_1
                 prdct1.InventoryNum = "IN-" + txtInventoryNum.Text;
                 isValid[2] = true;
             }
+            #endregion
 
-            // Count Validation
+            #region Count Validation
             if (String.IsNullOrEmpty(txtCount.Text))
             {
                 errorProvider4.SetError(txtCount, "Count is required");
@@ -113,8 +116,9 @@ namespace CS223Lab_GUI_1
                 prdct1.Count = int.Parse(txtCount.Text);
                 isValid[3] = true;
             }
+            #endregion
 
-            // Price Validation
+            #region Price Validation
             if (String.IsNullOrEmpty(txtPrice.Text))
             {
                 errorProvider5.SetError(txtPrice, "Price is required.");
@@ -131,8 +135,9 @@ namespace CS223Lab_GUI_1
                 prdct1.Price = double.Parse(txtPrice.Text);
                 isValid[4] = true;
             }
+            #endregion
 
-            // Gender Input
+            #region Gender Input
             string targetDemogrGender = "";
             try
             {
@@ -146,9 +151,9 @@ namespace CS223Lab_GUI_1
             {
                 prdct1.TargetDemogrGender = targetDemogrGender;
             }
+            #endregion
 
-
-            // Age Input
+            #region Age Input
             var targetDemogrAge = clbAge.CheckedItems;
             if (targetDemogrAge.Count == 0)
             {
@@ -162,6 +167,7 @@ namespace CS223Lab_GUI_1
                 }
                 prdct1.TargetDemogrAge = (prdct1.TargetDemogrAge).Remove(prdct1.TargetDemogrAge.Length - 2);
             }
+            #endregion
 
             bool allAreValid = isValid[0] && isValid[1] && isValid[2] && isValid[3] && isValid[4];
 
