@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -38,19 +39,18 @@ namespace CS223Lab_GUI_1
         public void Save()
         {
             //products.Add(this);
-            //Console.WriteLine("Product has been loaded to database.");
             try
             {
-                string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
-                var conn = new SqlConnection(connString);
-                conn.Open();
-
-                string dbDate = Date.Substring(Date.Length - 4) + "-" + Date.Substring(Date.Length - 7, 2) + "-" + Date.Substring(Date.Length - 10, 2);
-                string query = $"INSERT INTO Products VALUES({Number}, '{ItemName}', '{InventoryNum}', {Count}, {Price}, '{dbDate}', '{TargetDemogrGender}', '{TargetDemogrAge}')";
-                var cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
+                string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Initial Catalog=ElectronicsImportCompany;Integrated Security=true";
+                using (var conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    string query = $"INSERT INTO Products VALUES({Number}, '{ItemName}', '{InventoryNum}', {Count}, {Price}, '{Date}', '{TargetDemogrGender}', '{TargetDemogrAge}')";
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                } 
             }
             catch (SqlException e)
             {
@@ -60,22 +60,31 @@ namespace CS223Lab_GUI_1
 
         public static List<Product> GetAllProducts()
         {
+            //return products;
             List<Product> prdctsList = new List<Product>();
             try
             {
                 string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
-                var conn = new SqlConnection(connString);
-                conn.Open();
-
-                string query = "SELECT * FROM Products;";
-                var cmd = new SqlCommand(query, conn);
-                SqlDataReader sdr = cmd.ExecuteReader();
-
-                while (sdr.Read())
+                using (var conn = new SqlConnection(connString))
                 {
-                    prdctsList.Add(new Product((int)sdr[0], (string)sdr[1], (string)sdr[2], (int)sdr[3], (double)sdr[4], (string)sdr[5], (string)sdr[6], (string)sdr[7]));
+                    conn.Open();
+                    string query = "SELECT * FROM Products;";
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        while (sdr.Read())
+                        {
+                            prdctsList.Add(new Product(sdr.GetInt32(sdr.GetOrdinal("Number")),
+                                                       sdr.GetString(sdr.GetOrdinal("ItemName")),
+                                                       sdr.GetString(sdr.GetOrdinal("InventoryNum")),
+                                                       sdr.GetInt32(sdr.GetOrdinal("Count")),
+                                                       sdr.GetDouble(sdr.GetOrdinal("Price")),
+                                                       sdr.GetString(sdr.GetOrdinal("Date")),
+                                                       sdr.GetString(sdr.GetOrdinal("TargetDemogrGender")),
+                                                       sdr.GetString(sdr.GetOrdinal("TargetDemogrAge"))));
+                        }
+                    }
                 }
-                conn.Close();
             }
             catch (SqlException e)
             {
@@ -87,36 +96,38 @@ namespace CS223Lab_GUI_1
 
         public static List<Product> FilterByPrice(double minPrice, double maxPrice)
         {
+            //return products.FindAll(p => p.Price >= minPrice && p.Price <= maxPrice);
             List<Product> prdctsList = new List<Product>();
-
             try
             {
                 string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
-                var conn = new SqlConnection(connString);
-                conn.Open();
-
-                string query = $"SELECT * FROM Products WHERE Price >= {minPrice} AND Price <= {maxPrice};";
-                var cmd = new SqlCommand(query, conn);
-                SqlDataReader sdr = cmd.ExecuteReader();
-
-                while (sdr.Read())
+                using (var conn = new SqlConnection(connString))
                 {
-                    prdctsList.Add(new Product((int)sdr[0], (string)sdr[1], (string)sdr[2], (int)sdr[3], (double)sdr[4], (string)sdr[5], (string)sdr[6], (string)sdr[7]));
+                    conn.Open();
+                    string query = $"SELECT * FROM Products WHERE Price >= {minPrice} AND Price <= {maxPrice};";
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        SqlDataReader sdr = cmd.ExecuteReader();
+
+                        while (sdr.Read())
+                        {
+                            prdctsList.Add(new Product((int)sdr[0], (string)sdr[1], (string)sdr[2], (int)sdr[3], (double)sdr[4], (string)sdr[5], (string)sdr[6], (string)sdr[7]));
+                        }
+                    }
                 }
-                conn.Close();
+                
             }
             catch (SqlException e)
             {
                 MessageBox.Show(e.Message);
             }
             return prdctsList;
-            //return products.FindAll(p => p.Price >= minPrice && p.Price <= maxPrice);
         }
 
         public static List<Product> FindByName(string name)
         {
+            //return products.FindAll(p => p.ItemName == name);
             List<Product> prdctsList = new List<Product>();
-
             try
             {
                 string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
@@ -138,7 +149,6 @@ namespace CS223Lab_GUI_1
                 MessageBox.Show(e.Message);
             }
             return prdctsList;
-            //return products.FindAll(p => p.ItemName == name);
         }
     }
 }
