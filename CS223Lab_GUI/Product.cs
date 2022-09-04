@@ -45,9 +45,19 @@ namespace CS223Lab_GUI_1
                 using (var conn = new SqlConnection(connString))
                 {
                     conn.Open();
-                    string query = $"INSERT INTO Products VALUES({Number}, '{ItemName}', '{InventoryNum}', {Count}, {Price}, '{Date}', '{TargetDemogrGender}', '{TargetDemogrAge}')";
+                    string query = "INSERT INTO Products VALUES" +
+                        "(@Number, @ItemName, @InventoryNum, @Count, @Price, @Date, @TargetDemogrGender, @TargetDemogrAge)";
                     using (var cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@Number", Number);
+                        cmd.Parameters.AddWithValue("@ItemName", ItemName);
+                        cmd.Parameters.AddWithValue("@InventoryNum", InventoryNum);
+                        cmd.Parameters.AddWithValue("@Count", Count);
+                        cmd.Parameters.AddWithValue("@Price", Price);
+                        cmd.Parameters.AddWithValue("@Date", Date);
+                        cmd.Parameters.AddWithValue("@TargetDemogrGender", TargetDemogrGender);
+                        cmd.Parameters.AddWithValue("@TargetDemogrAge", TargetDemogrAge);
+
                         cmd.ExecuteNonQuery();
                     }
                 } 
@@ -71,17 +81,10 @@ namespace CS223Lab_GUI_1
                     string query = "SELECT * FROM Products;";
                     using (var cmd = new SqlCommand(query, conn))
                     {
-                        SqlDataReader sdr = cmd.ExecuteReader();
-                        while (sdr.Read())
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
                         {
-                            prdctsList.Add(new Product(sdr.GetInt32(sdr.GetOrdinal("Number")),
-                                                       sdr.GetString(sdr.GetOrdinal("ItemName")),
-                                                       sdr.GetString(sdr.GetOrdinal("InventoryNum")),
-                                                       sdr.GetInt32(sdr.GetOrdinal("Count")),
-                                                       sdr.GetDouble(sdr.GetOrdinal("Price")),
-                                                       sdr.GetString(sdr.GetOrdinal("Date")),
-                                                       sdr.GetString(sdr.GetOrdinal("TargetDemogrGender")),
-                                                       sdr.GetString(sdr.GetOrdinal("TargetDemogrAge"))));
+                            prdctsList.Add(new Product(reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetInt16(3), (double)reader.GetDecimal(4), reader.GetString(5), reader.GetString(6), reader.GetString(7)));
                         }
                     }
                 }
@@ -104,14 +107,15 @@ namespace CS223Lab_GUI_1
                 using (var conn = new SqlConnection(connString))
                 {
                     conn.Open();
-                    string query = $"SELECT * FROM Products WHERE Price >= {minPrice} AND Price <= {maxPrice};";
+                    string query = "SELECT * FROM Products WHERE Price >= @minPrice AND Price <= @maxPrice;";
                     using (var cmd = new SqlCommand(query, conn))
                     {
-                        SqlDataReader sdr = cmd.ExecuteReader();
-
-                        while (sdr.Read())
+                        cmd.Parameters.AddWithValue("@minPrice", minPrice);
+                        cmd.Parameters.AddWithValue("@maxPrice", maxPrice);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
                         {
-                            prdctsList.Add(new Product((int)sdr[0], (string)sdr[1], (string)sdr[2], (int)sdr[3], (double)sdr[4], (string)sdr[5], (string)sdr[6], (string)sdr[7]));
+                            prdctsList.Add(new Product(reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetInt16(3), (double)reader.GetDecimal(4), reader.GetString(5), reader.GetString(6), reader.GetString(7)));
                         }
                     }
                 }
@@ -131,18 +135,22 @@ namespace CS223Lab_GUI_1
             try
             {
                 string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
-                var conn = new SqlConnection(connString);
-                conn.Open();
-
-                string query = $"SELECT * FROM Products WHERE ItemName = '{name}';";
-                var cmd = new SqlCommand(query, conn);
-                SqlDataReader sdr = cmd.ExecuteReader();
-
-                while (sdr.Read())
+                using (var conn = new SqlConnection(connString))
                 {
-                    prdctsList.Add(new Product((int)sdr[0], (string)sdr[1], (string)sdr[2], (int)sdr[3], (double)sdr[4], (string)sdr[5], (string)sdr[6], (string)sdr[7]));
+                    conn.Open();
+
+                    string query = "SELECT * FROM Products WHERE ItemName LIKE @name;";
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", name + "%");
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            prdctsList.Add(new Product(reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetInt16(3), (double) reader.GetDecimal(4), reader.GetString(5), reader.GetString(6), reader.GetString(7)));
+                        }
+                    }
+                    
                 }
-                conn.Close();
             }
             catch (SqlException e)
             {

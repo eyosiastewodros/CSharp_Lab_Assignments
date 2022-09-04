@@ -31,7 +31,9 @@ namespace CS223Lab_GUI_1
 
         private void prdct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Product Clicked");
+            // ProductCard clickedCard = (ProductCard) sender;
+            // MessageBox.Show(clickedCard.ProductName + " Got Clicked");
+            MessageBox.Show("Product Got Clicked");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -40,26 +42,26 @@ namespace CS223Lab_GUI_1
             foreach (var item in Product.GetAllProducts())
             {
                 ProductCard prdctCard = new ProductCard(item.ItemName, item.InventoryNum, item.Price.ToString());
-                prdctCard.Click += prdct_Click;
+                prdctCard.Click += new EventHandler(prdct_Click);
                 flpInventoryItems.Controls.Add(prdctCard);
             }
         }
 
-        private void btnTestConn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
-                using (SqlConnection conn = new SqlConnection(connString))
-                {
-                    conn.Open();
-                    MessageBox.Show("Connection Successful");
-                }
-            }
-            catch (SqlException excp)
-            {
-                MessageBox.Show(excp.Message);
-            }
-        }
+        //private void btnTestConn_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        string connString = @"Server=DESKTOP-S1FH2A6\SQLEXPRESS;Database=ElectronicsImportCompany;Integrated Security=true";
+        //        using (SqlConnection conn = new SqlConnection(connString))
+        //        {
+        //            conn.Open();
+        //            MessageBox.Show("Connection Successful");
+        //        }
+        //    }
+        //    catch (SqlException excp)
+        //    {
+        //        MessageBox.Show(excp.Message);
+        //    }
+        //}
     }
 }
