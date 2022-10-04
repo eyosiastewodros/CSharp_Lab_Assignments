@@ -11,6 +11,8 @@ namespace CS223Lab_GUI_1
 {
     public class Product
     {
+        public delegate bool validateuser(string username);
+        public delegate bool validatepassword(string password);
         public int Number { get; set; }
         public string ItemName { get; set; }
         public string InventoryNum { get; set; }
@@ -20,8 +22,16 @@ namespace CS223Lab_GUI_1
         public string TargetDemogrGender { get; set; }
         public string TargetDemogrAge { get; set; }
         public static List<Product> products = new List<Product>();
+        public static List<string> Usernames = new List<string>();
+        public static List<string> passwords = new List<string>();
+
+
 
         public Product()
+        {
+
+        }
+        public Product(validateuser v)
         {
 
         }
@@ -158,5 +168,40 @@ namespace CS223Lab_GUI_1
             }
             return prdctsList;
         }
+       
+        
+        public static bool  validateUsername(string user_txt)
+        {
+            bool userNameexists = false;
+            if (Usernames != null)
+
+                foreach (var i in Usernames)
+                    if (i == user_txt)
+                    {
+                        userNameexists = true;
+                    }
+            return userNameexists;
+        }
+
+        public static bool validatepass(string pass_txt)
+        {
+            bool userNameexists = false;
+            if (passwords != null)
+
+                foreach (var i in passwords)
+                    if (i == pass_txt)
+                    {
+                        userNameexists = true;
+                    }
+            return userNameexists;
+        }
+
+
+
+
+
+        public validateuser valuser = validateUsername;
+        public validatepassword valpass=validatepass;   
+
     }
 }

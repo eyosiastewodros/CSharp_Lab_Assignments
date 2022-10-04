@@ -16,6 +16,7 @@ namespace CS223Lab_GUI_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            LoginForm form = new LoginForm();
             Application.Run(new LoginForm());
         }
     }
