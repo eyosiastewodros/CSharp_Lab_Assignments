@@ -5,22 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace CS223Lab_GUI_1
 {
-    public partial class LoginForm : Form
+    public partial class Signup : Form
     {
-        public LoginForm()
+        public Signup()
+        {
+            InitializeComponent();
+        }
+        public Signup(LoginForm lf)
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //memokerya for pass and user
+          //memokerya
             Product.Usernames.Add("eyosi");
             Product.passwords.Add("eyosi");
 
@@ -29,19 +33,15 @@ namespace CS223Lab_GUI_1
             Regex repass = new Regex(@"^[a-z] $");
             Regex reuser = new Regex(@"^[a-z] $");
             bool[] bools = new bool[] { false, false };
-            errorProvider1.Clear();
-
-            errorProvider2.Clear();
-
             bool b = true;
             if (!(string.IsNullOrEmpty(pass_txt.Text) || string.IsNullOrEmpty(user_txt.Text)))
 
             {
 
-                if ((p.valuser(user_txt.Text) && p.valpass(pass_txt.Text)))
+                if (!(p.valuser(user_txt.Text) || p.valpass(pass_txt.Text)))
                 {
 
-                    if (!repass.IsMatch(pass_txt.Text))
+                  if (!repass.IsMatch(pass_txt.Text))
                     {
 
                         errorProvider1.SetError(pass_txt, "character should be between a-z");
@@ -55,7 +55,7 @@ namespace CS223Lab_GUI_1
                     }
 
 
-                   if (!repass.IsMatch(user_txt.Text))
+                     if (!repass.IsMatch(user_txt.Text))
                     {
                         errorProvider1.SetError(user_txt, "Make sure there are no special characters");
                         bools[1] = false;
@@ -74,7 +74,7 @@ namespace CS223Lab_GUI_1
                         if (Product.Usernames != null)
                         {
                             Product.Usernames.Add(user_txt.Text);
-                            MessageBox.Show("user account succesfully logged in!");
+                            MessageBox.Show("user account succesfully created!");
                             this.Hide();
 
                             MainForm mainForm1 = new MainForm(user_txt.Text, this);
@@ -88,7 +88,7 @@ namespace CS223Lab_GUI_1
                     }
                     else
                     {
-                        MessageBox.Show("user account NOT succesfully logged in!(maybe memory,not duplicate!");
+                        MessageBox.Show("user account NOT succesfully created!(maybe memory,not duplicate!");
                         user_txt.Clear();
                         pass_txt.Clear();
 
@@ -100,36 +100,28 @@ namespace CS223Lab_GUI_1
                     if (p.valuser(user_txt.Text) == true && p.valpass(pass_txt.Text) == false)
 
                     {
-                        MessageBox.Show("You got the name correct! Just try and remember your password");
-                        pass_txt.Clear();
+                        MessageBox.Show("This user name is already taken!! please Reenter your user name!");
+                        user_txt.Clear();
 
                     }
                     else if (p.valuser(user_txt.Text) == false && p.valpass(pass_txt.Text) == true)
                     {
-                        MessageBox.Show("You Remembered your password. Now try and remember your usernmae!");
-                        user_txt.Clear();
+                        MessageBox.Show("This password is already taken!! please Reenter your password!");
+                        pass_txt.Clear();
 
 
                     }
 
-                    else if (p.valuser(user_txt.Text) && p.valpass(pass_txt.Text) == false)
+                    else if (p.valuser(user_txt.Text) && p.valpass(pass_txt.Text) == true)
 
                     {
-                        MessageBox.Show("These Usernmae and password are non-existent!! please Reenter Both to continue!");
+                        MessageBox.Show("These Usernmae and password are already taken!! please Reenter your Both to continue!");
 
                         user_txt.Clear();
                         pass_txt.Clear();
 
                     }
-                    else
-                    {
-                        MessageBox.Show("These Usernmae and password are non-existent!! please Reenter Both to continue!");
 
-                        user_txt.Clear();
-                        pass_txt.Clear();
-
-
-                    }
 
                 }
             }
@@ -142,7 +134,7 @@ namespace CS223Lab_GUI_1
                     errorProvider2.SetError(pass_txt, "password can't be empty!");
 
 
-                
+                  
                 }
                 else if (string.IsNullOrEmpty(user_txt.Text))
                 {
@@ -157,15 +149,16 @@ namespace CS223Lab_GUI_1
                 }
 
             }
-        }
 
 
-            private void button3_Click(object sender, EventArgs e)
-            {
-                LoginForm lf = new LoginForm();
-                this.Hide();
-                Signup s = new Signup(lf);
-                s.Show();
-            }
+
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Close();
+            loginForm.Show();
+        }
+    }
     }

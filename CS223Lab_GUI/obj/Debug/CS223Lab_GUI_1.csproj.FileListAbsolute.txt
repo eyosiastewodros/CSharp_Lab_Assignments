@@ -77,3 +77,4 @@ C:\Users\Lenovo\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\C
 C:\Users\Lenovo\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.exe
 C:\Users\Lenovo\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.pdb
+C:\Users\Lenovo\Documents\GitHub\CSharp_Lab_Assignments\CS223Lab_GUI\obj\Debug\CS223Lab_GUI_1.Signup.resources
